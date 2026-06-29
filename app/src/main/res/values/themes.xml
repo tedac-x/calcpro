@@ -1,0 +1,8 @@
+<resources>
+    <style name="Theme.CalcPro" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#0F3460</item>
+        <item name="colorPrimaryDark">#1A1A2E</item>
+        <item name="colorAccent">#53D8FB</item>
+        <item name="android:windowBackground">#1A1A2E</item>
+    </style>
+</resources>
