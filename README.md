@@ -68,4 +68,4 @@ app/
 
 **Course:** SEN 104 / SEN 214 — Introduction to Mobile App Development  
 **Institution:** Obafemi Awolowo University, Ile-Ife  
-**Developer:** Tedac
+**Developer:** ODUKOYA IBUKUNOLUWA EMMANUEL(Tedac)
