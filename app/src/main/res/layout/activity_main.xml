@@ -1,170 +1,58 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#1A1A2E">
-<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="12dp">
-<!--  DISPLAY SCREEN  -->
-<TextView android:id="@+id/tvExpression" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="#16213E" android:gravity="end" android:minHeight="40dp" android:padding="10dp" android:text="" android:textColor="#A0A0B0" android:textSize="16sp"/>
-<TextView android:id="@+id/tvResult" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="#16213E" android:gravity="end" android:padding="10dp" android:text="0" android:textColor="#E0E0E0" android:textSize="36sp" android:textStyle="bold" android:layout_marginBottom="8dp"/>
-<!--  MODE TABS  -->
-<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="8dp">
-<Button android:id="@+id/btnModeBasic" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:text="Basic" android:textSize="12sp" android:backgroundTint="#0F3460" android:textColor="#FFFFFF" android:layout_marginEnd="2dp"/>
-<Button android:id="@+id/btnModeTrig" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:text="Trig" android:textSize="12sp" android:backgroundTint="#0F3460" android:textColor="#FFFFFF" android:layout_marginEnd="2dp"/>
-<Button android:id="@+id/btnModeHyp" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:text="Hyp" android:textSize="12sp" android:backgroundTint="#0F3460" android:textColor="#FFFFFF" android:layout_marginEnd="2dp"/>
-<Button android:id="@+id/btnModeStat" android:layout_width="0dp" android:layout_height="40dp" android:layout_weight="1" android:text="Stat" android:textSize="12sp" android:backgroundTint="#0F3460" android:textColor="#FFFFFF"/>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/etNumber1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter first number"
+        android:inputType="numberDecimal"/>
+
+    <EditText
+        android:id="@+id/etNumber2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter second number"
+        android:inputType="numberDecimal"/>
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Result will appear here"
+        android:textSize="18sp"
+        android:padding="8dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"/>
+
+        <Button
+            android:id="@+id/btnSubtract"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subtract"/>
+
+        <Button
+            android:id="@+id/btnMultiply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Multiply"/>
+
+        <Button
+            android:id="@+id/btnDivide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Divide"/>
+    </LinearLayout>
 </LinearLayout>
-<!--  BASIC PANEL  -->
-<LinearLayout android:id="@+id/panelBasic" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="visible">
-<!--  Row: AC, +/-, %, ÷  -->
-<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-<Button android:id="@+id/btnClear" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="AC" android:backgroundTint="#E84545" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnSign" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="+/-" android:backgroundTint="#533483" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnPercent" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="%" android:backgroundTint="#533483" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnDivide" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="÷" android:backgroundTint="#E84545" android:textColor="#FFF" android:layout_margin="2dp"/>
-</LinearLayout>
-<!--  Row: 7, 8, 9, ×  -->
-<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-<Button android:id="@+id/btn7" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="7" android:backgroundTint="#0F3460" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btn8" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="8" android:backgroundTint="#0F3460" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btn9" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="9" android:backgroundTint="#0F3460" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnMultiply" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="×" android:backgroundTint="#E84545" android:textColor="#FFF" android:layout_margin="2dp"/>
-</LinearLayout>
-<!--  Row: 4, 5, 6, -  -->
-<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-<Button android:id="@+id/btn4" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="4" android:backgroundTint="#0F3460" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btn5" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="5" android:backgroundTint="#0F3460" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btn6" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="6" android:backgroundTint="#0F3460" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnSubtract" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="-" android:backgroundTint="#E84545" android:textColor="#FFF" android:layout_margin="2dp"/>
-</LinearLayout>
-<!--  Row: 1, 2, 3, +  -->
-<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-<Button android:id="@+id/btn1" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="1" android:backgroundTint="#0F3460" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btn2" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="2" android:backgroundTint="#0F3460" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btn3" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="3" android:backgroundTint="#0F3460" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnAdd" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="+" android:backgroundTint="#E84545" android:textColor="#FFF" android:layout_margin="2dp"/>
-</LinearLayout>
-<!--  Row: 0, ., DEL, =  -->
-<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-<Button android:id="@+id/btn0" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="0" android:backgroundTint="#0F3460" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnDot" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="." android:backgroundTint="#0F3460" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnDel" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="DEL" android:backgroundTint="#533483" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnEquals" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="=" android:backgroundTint="#53D8FB" android:textColor="#000" android:layout_margin="2dp"/>
-</LinearLayout>
-<!--  Scientific Row 1  -->
-<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-<Button android:id="@+id/btnSqrt" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1" android:text="√x" android:backgroundTint="#1B4332" android:textColor="#FFF" android:textSize="12sp" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnSquare" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1" android:text="x²" android:backgroundTint="#1B4332" android:textColor="#FFF" android:textSize="12sp" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnPow" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1" android:text="xʸ" android:backgroundTint="#1B4332" android:textColor="#FFF" android:textSize="12sp" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnFactorial" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1" android:text="n!" android:backgroundTint="#1B4332" android:textColor="#FFF" android:textSize="12sp" android:layout_margin="2dp"/>
-</LinearLayout>
-<!--  Scientific Row 2  -->
-<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-<Button android:id="@+id/btnLog" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1" android:text="log" android:backgroundTint="#1B4332" android:textColor="#FFF" android:textSize="12sp" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnLn" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1" android:text="ln" android:backgroundTint="#1B4332" android:textColor="#FFF" android:textSize="12sp" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnPi" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1" android:text="π" android:backgroundTint="#1B4332" android:textColor="#FFF" android:textSize="12sp" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnE" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1" android:text="e" android:backgroundTint="#1B4332" android:textColor="#FFF" android:textSize="12sp" android:layout_margin="2dp"/>
-</LinearLayout>
-</LinearLayout>
-<!--  TRIG PANEL  -->
-<LinearLayout android:id="@+id/panelTrig" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
-<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Trigonometric Functions" android:textColor="#53D8FB" android:textSize="14sp" android:padding="6dp"/>
-<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-<Button android:id="@+id/btnSin" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="sin" android:backgroundTint="#0F3460" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnCos" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="cos" android:backgroundTint="#0F3460" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnTan" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="tan" android:backgroundTint="#0F3460" android:textColor="#FFF" android:layout_margin="2dp"/>
-</LinearLayout>
-<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-<Button android:id="@+id/btnAsin" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="sin⁻¹" android:backgroundTint="#533483" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnAcos" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="cos⁻¹" android:backgroundTint="#533483" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnAtan" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="tan⁻¹" android:backgroundTint="#533483" android:textColor="#FFF" android:layout_margin="2dp"/>
-</LinearLayout>
-<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-<Button android:id="@+id/btnDeg" android:layout_width="0dp" android:layout_height="50dp" android:layout_weight="1" android:text="DEG" android:backgroundTint="#E84545" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnRad" android:layout_width="0dp" android:layout_height="50dp" android:layout_weight="1" android:text="RAD" android:backgroundTint="#1B4332" android:textColor="#FFF" android:layout_margin="2dp"/>
-</LinearLayout>
-<!--  Number pad for trig  -->
-<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-<Button android:id="@+id/btnT7" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="7" android:backgroundTint="#16213E" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnT8" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="8" android:backgroundTint="#16213E" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnT9" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="9" android:backgroundTint="#16213E" android:textColor="#FFF" android:layout_margin="2dp"/>
-</LinearLayout>
-<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-<Button android:id="@+id/btnT4" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="4" android:backgroundTint="#16213E" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnT5" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="5" android:backgroundTint="#16213E" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnT6" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="6" android:backgroundTint="#16213E" android:textColor="#FFF" android:layout_margin="2dp"/>
-</LinearLayout>
-<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-<Button android:id="@+id/btnT1" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="1" android:backgroundTint="#16213E" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnT2" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="2" android:backgroundTint="#16213E" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnT3" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="3" android:backgroundTint="#16213E" android:textColor="#FFF" android:layout_margin="2dp"/>
-</LinearLayout>
-<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-<Button android:id="@+id/btnT0" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="0" android:backgroundTint="#16213E" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnTDot" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="." android:backgroundTint="#16213E" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnTDel" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="DEL" android:backgroundTint="#E84545" android:textColor="#FFF" android:layout_margin="2dp"/>
-</LinearLayout>
-<Button android:id="@+id/btnTClear" android:layout_width="match_parent" android:layout_height="50dp" android:text="CLEAR" android:backgroundTint="#E84545" android:textColor="#FFF" android:layout_margin="2dp"/>
-</LinearLayout>
-<!--  HYPERBOLIC PANEL  -->
-<LinearLayout android:id="@+id/panelHyp" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
-<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Hyperbolic Functions" android:textColor="#53D8FB" android:textSize="14sp" android:padding="6dp"/>
-<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-<Button android:id="@+id/btnSinh" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="sinh" android:backgroundTint="#0F3460" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnCosh" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="cosh" android:backgroundTint="#0F3460" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnTanh" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="tanh" android:backgroundTint="#0F3460" android:textColor="#FFF" android:layout_margin="2dp"/>
-</LinearLayout>
-<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-<Button android:id="@+id/btnAsinh" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="sinh⁻¹" android:backgroundTint="#533483" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnAcosh" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="cosh⁻¹" android:backgroundTint="#533483" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnAtanh" android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:text="tanh⁻¹" android:backgroundTint="#533483" android:textColor="#FFF" android:layout_margin="2dp"/>
-</LinearLayout>
-<!--  Number pad for hyp  -->
-<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-<Button android:id="@+id/btnH7" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="7" android:backgroundTint="#16213E" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnH8" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="8" android:backgroundTint="#16213E" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnH9" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="9" android:backgroundTint="#16213E" android:textColor="#FFF" android:layout_margin="2dp"/>
-</LinearLayout>
-<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-<Button android:id="@+id/btnH4" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="4" android:backgroundTint="#16213E" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnH5" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="5" android:backgroundTint="#16213E" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnH6" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="6" android:backgroundTint="#16213E" android:textColor="#FFF" android:layout_margin="2dp"/>
-</LinearLayout>
-<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-<Button android:id="@+id/btnH1" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="1" android:backgroundTint="#16213E" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnH2" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="2" android:backgroundTint="#16213E" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnH3" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="3" android:backgroundTint="#16213E" android:textColor="#FFF" android:layout_margin="2dp"/>
-</LinearLayout>
-<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-<Button android:id="@+id/btnH0" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="0" android:backgroundTint="#16213E" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnHDot" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="." android:backgroundTint="#16213E" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnHDel" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="DEL" android:backgroundTint="#E84545" android:textColor="#FFF" android:layout_margin="2dp"/>
-</LinearLayout>
-<Button android:id="@+id/btnHClear" android:layout_width="match_parent" android:layout_height="50dp" android:text="CLEAR" android:backgroundTint="#E84545" android:textColor="#FFF" android:layout_margin="2dp"/>
-</LinearLayout>
-<!--  STATISTICS / COMBO PANEL  -->
-<LinearLayout android:id="@+id/panelStat" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone" android:padding="4dp">
-<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Statistics, Permutations &amp; Combinations" android:textColor="#53D8FB" android:textSize="14sp" android:padding="6dp"/>
-<!--  Stats input  -->
-<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Enter numbers separated by commas (e.g. 2,4,6,8):" android:textColor="#A0A0B0" android:textSize="12sp" android:paddingBottom="4dp"/>
-<EditText android:id="@+id/etStatInput" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="e.g. 2, 5, 8, 3, 9" android:inputType="text" android:background="#16213E" android:textColor="#FFFFFF" android:textColorHint="#666" android:padding="10dp" android:layout_marginBottom="6dp"/>
-<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-<Button android:id="@+id/btnMean" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1" android:text="Mean" android:backgroundTint="#0F3460" android:textColor="#FFF" android:textSize="12sp" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnMedian" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1" android:text="Median" android:backgroundTint="#0F3460" android:textColor="#FFF" android:textSize="12sp" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnMode" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1" android:text="Mode" android:backgroundTint="#0F3460" android:textColor="#FFF" android:textSize="12sp" android:layout_margin="2dp"/>
-</LinearLayout>
-<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-<Button android:id="@+id/btnStdDev" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1" android:text="Std Dev" android:backgroundTint="#533483" android:textColor="#FFF" android:textSize="12sp" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnVariance" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1" android:text="Variance" android:backgroundTint="#533483" android:textColor="#FFF" android:textSize="12sp" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnSum" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1" android:text="Sum" android:backgroundTint="#533483" android:textColor="#FFF" android:textSize="12sp" android:layout_margin="2dp"/>
-</LinearLayout>
-<!--  Permutations / Combinations  -->
-<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Permutations (nPr) &amp; Combinations (nCr):" android:textColor="#53D8FB" android:textSize="13sp" android:paddingTop="12dp" android:paddingBottom="4dp"/>
-<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
-<EditText android:id="@+id/etN" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="n" android:inputType="number" android:background="#16213E" android:textColor="#FFFFFF" android:textColorHint="#666" android:padding="10dp" android:layout_marginEnd="4dp"/>
-<EditText android:id="@+id/etR" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="r" android:inputType="number" android:background="#16213E" android:textColor="#FFFFFF" android:textColorHint="#666" android:padding="10dp"/>
-</LinearLayout>
-<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="4dp">
-<Button android:id="@+id/btnNPR" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="nPr" android:backgroundTint="#1B4332" android:textColor="#FFF" android:layout_margin="2dp"/>
-<Button android:id="@+id/btnNCR" android:layout_width="0dp" android:layout_height="55dp" android:layout_weight="1" android:text="nCr" android:backgroundTint="#1B4332" android:textColor="#FFF" android:layout_margin="2dp"/>
-</LinearLayout>
-<TextView android:id="@+id/tvStatResult" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="#16213E" android:textColor="#53D8FB" android:textSize="16sp" android:padding="12dp" android:layout_marginTop="8dp" android:text="Result will appear here"/>
-</LinearLayout>
-</LinearLayout>
-</ScrollView>
