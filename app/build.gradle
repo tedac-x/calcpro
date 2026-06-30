@@ -3,10 +3,11 @@ plugins {
 }
 
 android {
+    namespace 'com.sen204.calcpro'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.sen204.scientificcalculator"
+        applicationId "com.sen204.calcpro"
         minSdk 24
         targetSdk 34
         versionCode 1
@@ -17,11 +18,6 @@ android {
         release {
             minifyEnabled false
         }
-    }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
