@@ -140,7 +140,7 @@
 </LinearLayout>
 <!--  STATISTICS / COMBO PANEL  -->
 <LinearLayout android:id="@+id/panelStat" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone" android:padding="4dp">
-<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Statistics, Permutations & Combinations" android:textColor="#53D8FB" android:textSize="14sp" android:padding="6dp"/>
+<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Statistics, Permutations &amp; Combinations" android:textColor="#53D8FB" android:textSize="14sp" android:padding="6dp"/>
 <!--  Stats input  -->
 <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Enter numbers separated by commas (e.g. 2,4,6,8):" android:textColor="#A0A0B0" android:textSize="12sp" android:paddingBottom="4dp"/>
 <EditText android:id="@+id/etStatInput" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="e.g. 2, 5, 8, 3, 9" android:inputType="text" android:background="#16213E" android:textColor="#FFFFFF" android:textColorHint="#666" android:padding="10dp" android:layout_marginBottom="6dp"/>
@@ -155,7 +155,7 @@
 <Button android:id="@+id/btnSum" android:layout_width="0dp" android:layout_height="52dp" android:layout_weight="1" android:text="Sum" android:backgroundTint="#533483" android:textColor="#FFF" android:textSize="12sp" android:layout_margin="2dp"/>
 </LinearLayout>
 <!--  Permutations / Combinations  -->
-<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Permutations (nPr) & Combinations (nCr):" android:textColor="#53D8FB" android:textSize="13sp" android:paddingTop="12dp" android:paddingBottom="4dp"/>
+<TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Permutations (nPr) &amp; Combinations (nCr):" android:textColor="#53D8FB" android:textSize="13sp" android:paddingTop="12dp" android:paddingBottom="4dp"/>
 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
 <EditText android:id="@+id/etN" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="n" android:inputType="number" android:background="#16213E" android:textColor="#FFFFFF" android:textColorHint="#666" android:padding="10dp" android:layout_marginEnd="4dp"/>
 <EditText android:id="@+id/etR" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:hint="r" android:inputType="number" android:background="#16213E" android:textColor="#FFFFFF" android:textColorHint="#666" android:padding="10dp"/>
