@@ -1,4 +1,4 @@
-package com.sen204.scientificcalculator;
+package com.sen204.calcpro;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
